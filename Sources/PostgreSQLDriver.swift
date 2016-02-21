@@ -1,6 +1,6 @@
 import libpq
 
-class PostgreSQLDriver: SQLDriver {
+public class PostgreSQLDriver: SQLDriver {
 	var connectionPointer: COpaquePointer!
 
 	func connect(parameters: [String: String]) -> Bool {

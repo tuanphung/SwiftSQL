@@ -13,7 +13,7 @@ private func initSQLDriver(type: SQLType) -> SQLDriver {
 	}
 }
 
-class SQL {
+public class SQL {
 	class final func open(type: SQLType, parameters: [String: String]) -> SQLDriver {
 		let driver = initSQLDriver(type)
 		driver.connect(parameters)

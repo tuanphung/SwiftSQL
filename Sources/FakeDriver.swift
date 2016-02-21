@@ -1,4 +1,4 @@
-class FakeDriver: SQLDriver {
+public class FakeDriver: SQLDriver {
 	func connect(parameters: [String: String]) -> Bool {
 		return false
 	}
