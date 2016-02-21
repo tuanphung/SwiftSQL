@@ -14,13 +14,13 @@ private func initSQLDriver(type: SQLType) -> SQLDriver {
 }
 
 public class SQL {
-	class final func open(type: SQLType, parameters: [String: String]) -> SQLDriver {
+	public class final func open(type: SQLType, parameters: [String: String]) -> SQLDriver {
 		let driver = initSQLDriver(type)
 		driver.connect(parameters)
 		return driver
 	}
 
-	class final func open(type: SQLType, connectionString: String) -> SQLDriver {
+	public class final func open(type: SQLType, connectionString: String) -> SQLDriver {
 		let driver = initSQLDriver(type)
 		driver.connect(connectionString)
 		return driver

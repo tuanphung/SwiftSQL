@@ -1,2 +1,2 @@
 swift build
-.build/debug/SwiftSQL
+.build/debug/Demo

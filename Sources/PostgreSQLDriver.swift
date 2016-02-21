@@ -3,7 +3,7 @@ import libpq
 public class PostgreSQLDriver: SQLDriver {
 	var connectionPointer: COpaquePointer!
 
-	func connect(parameters: [String: String]) -> Bool {
+	public func connect(parameters: [String: String]) -> Bool {
 		let pghost = parameters["pghost"] ?? "localhost"
 		let pgport = parameters["pgport"] ?? "5432"
 		let pgoptions = parameters["pgoptions"] ?? ""
@@ -28,7 +28,7 @@ public class PostgreSQLDriver: SQLDriver {
 		return true
 	}
 
-	func connect(connectionString: String) -> Bool {
+	public func connect(connectionString: String) -> Bool {
 		connectionPointer = PQconnectdb(connectionString)
 
 		guard PQstatus(connectionPointer) == CONNECTION_OK else {
@@ -39,11 +39,11 @@ public class PostgreSQLDriver: SQLDriver {
 		return true
 	}
 
-	func disconnect() {
+	public func disconnect() {
 		PQfinish(connectionPointer)
 	}
 
-	func status() -> SQLDriverStatus {
+	public func status() -> SQLDriverStatus {
 		guard PQstatus(connectionPointer) == CONNECTION_OK else {
 		    return .Disconnected
 		}
@@ -51,7 +51,7 @@ public class PostgreSQLDriver: SQLDriver {
 		return .Connected
 	}
 
-	func execute(query: String) -> Array<[String: Any]> {
+	public func execute(query: String) -> Array<[String: Any]> {
 		let resultPointer = PQexecParams(connectionPointer,
                                          query,
                                          0,
