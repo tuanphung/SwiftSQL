@@ -1,7 +1,49 @@
 import libpq
 
 public class PostgreSQLDriver: SQLDriver {
-	var connectionPointer: COpaquePointer!
+	private var connectionPointer: COpaquePointer!
+
+	var status: Status {
+		return Status(status: PQstatus(connectionPointer))
+	}
+
+	public enum Status {
+        case Bad
+        case Started
+        case Made
+        case AwatingResponse
+        case AuthOK
+        case SettingEnvironment
+        case SSLStartup
+        case OK
+        case Unknown
+        case Needed
+        
+        public init(status: ConnStatusType) {
+            switch status {
+            case CONNECTION_NEEDED:
+                self = .Needed
+            case CONNECTION_OK:
+                self = .OK
+            case CONNECTION_STARTED:
+                self = .Started
+            case CONNECTION_MADE:
+                self = .Made
+            case CONNECTION_AWAITING_RESPONSE:
+                self = .AwatingResponse
+            case CONNECTION_AUTH_OK:
+                self = .AuthOK
+            case CONNECTION_SSL_STARTUP:
+                self = .SSLStartup
+            case CONNECTION_SETENV:
+                self = .SettingEnvironment
+            case CONNECTION_BAD:
+                self = .Bad
+            default:
+                self = .Unknown
+            }
+        }
+    }
 
 	public func connect(parameters: [String: String]) -> Bool {
 		let pghost = parameters["pghost"] ?? "localhost"
@@ -41,22 +83,50 @@ public class PostgreSQLDriver: SQLDriver {
 
 	public func disconnect() {
 		PQfinish(connectionPointer)
+
+		connectionPointer = nil
 	}
 
-	public func status() -> SQLDriverStatus {
-		guard PQstatus(connectionPointer) == CONNECTION_OK else {
-		    return .Disconnected
-		}
-
-		return .Connected
+	public var connected: Bool {
+		return (status == .OK || status == .Made)
 	}
 
 	public func execute(query: String) -> Array<[String: Any]> {
-		let resultPointer = PQexecParams(connectionPointer,
+		let resultPointer = PQexec(connectionPointer, query)
+
+        let status = PQresultStatus(resultPointer)
+
+        switch status {
+        case PGRES_COMMAND_OK, PGRES_TUPLES_OK:
+        	return readResultPointer(resultPointer)
+        default:
+            print(String.fromCString(PQresultErrorMessage(resultPointer)))
+			return Array<[String: Any]>()
+        }
+	}
+
+	public func execute(query: String, parameters: Any...) -> Array<[String: Any]> {
+		let values = UnsafeMutablePointer<UnsafePointer<Int8>>.alloc(parameters.count)
+
+        defer {
+            values.destroy()
+            values.dealloc(parameters.count)
+        }
+
+        var temps = [Array<UInt8>]()
+        for (i, v) in parameters.enumerate() {
+        	let value = Array<UInt8>("\(v)".utf8) + [0]
+            values[i] = UnsafePointer<Int8>(value)
+
+            // Keep reference to value.
+            temps.append(value)
+        }
+
+        let resultPointer = PQexecParams(connectionPointer,
                                          query,
-                                         0,
+                                         Int32(parameters.count),
                                          nil,
-                                         nil,
+                                         values,
                                          nil,
                                          nil,
                                          0)
@@ -65,14 +135,14 @@ public class PostgreSQLDriver: SQLDriver {
 
         switch status {
         case PGRES_COMMAND_OK, PGRES_TUPLES_OK:
-        	return parseResultPointer(resultPointer)
+        	return readResultPointer(resultPointer)
         default:
             print(String.fromCString(PQresultErrorMessage(resultPointer)))
 			return Array<[String: Any]>()
         }
 	}
 
-	private func parseResultPointer(resultPointer: COpaquePointer) -> Array<[String: Any]> {
+	private func readResultPointer(resultPointer: COpaquePointer) -> Array<[String: Any]> {
 		let numberOfFields = PQnfields(resultPointer)
 		let numberOfRecords = PQntuples(resultPointer)
 
@@ -83,7 +153,7 @@ public class PostgreSQLDriver: SQLDriver {
 				fieldNames.append(name)
 			}
 			else {
-				fieldNames.append("Unnamed")
+				fieldNames.append("Unnamed\(column)")
 			}
 		}
 

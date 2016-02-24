@@ -1,4 +1,8 @@
-public class FakeDriver: SQLDriver {
+public class UnsupportedDriver: SQLDriver {
+	public class func initInstance() -> SQLDriver {
+		return UnsupportedDriver()
+	}
+
 	public func connect(parameters: [String: String]) -> Bool {
 		return false
 	}
@@ -10,11 +14,15 @@ public class FakeDriver: SQLDriver {
 	public func disconnect() { 
 	}
 
-	public func status() -> SQLDriverStatus {
-		return .Disconnected
+	public var connected: Bool {
+		return false
 	}
 
 	public func execute(query: String) -> Array<[String: Any]> {
 		return Array<[String: Any]>()
+	}
+
+	public func execute(query: String, parameters: Any...) -> Array<[String: Any]> {
+		return Array<[String: Any]>()	
 	}
 }

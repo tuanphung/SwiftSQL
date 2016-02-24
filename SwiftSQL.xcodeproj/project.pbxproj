@@ -1,0 +1,281 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		824D9EC01C7C5C6D00233D64 /* UnsupportedDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824D9EBB1C7C5C6D00233D64 /* UnsupportedDriver.swift */; };
+		824D9EC11C7C5C6D00233D64 /* PostgreSQLDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824D9EBC1C7C5C6D00233D64 /* PostgreSQLDriver.swift */; };
+		824D9EC21C7C5C6D00233D64 /* SQL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824D9EBD1C7C5C6D00233D64 /* SQL.swift */; };
+		824D9EC31C7C5C6D00233D64 /* SQLDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824D9EBE1C7C5C6D00233D64 /* SQLDriver.swift */; };
+		824D9EC41C7C5C6D00233D64 /* SQLModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824D9EBF1C7C5C6D00233D64 /* SQLModel.swift */; };
+		824D9EC71C7C5C7500233D64 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824D9EC61C7C5C7500233D64 /* Package.swift */; };
+		82B133011C7C602500181A74 /* SQLTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B133001C7C602500181A74 /* SQLTest.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		822899201C7C5C2F0058B499 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		822899221C7C5C2F0058B499 /* SwiftSQL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftSQL; sourceTree = BUILT_PRODUCTS_DIR; };
+		824D9EBB1C7C5C6D00233D64 /* UnsupportedDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsupportedDriver.swift; sourceTree = "<group>"; };
+		824D9EBC1C7C5C6D00233D64 /* PostgreSQLDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostgreSQLDriver.swift; sourceTree = "<group>"; };
+		824D9EBD1C7C5C6D00233D64 /* SQL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQL.swift; sourceTree = "<group>"; };
+		824D9EBE1C7C5C6D00233D64 /* SQLDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLDriver.swift; sourceTree = "<group>"; };
+		824D9EBF1C7C5C6D00233D64 /* SQLModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLModel.swift; sourceTree = "<group>"; };
+		824D9EC51C7C5C7500233D64 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		824D9EC61C7C5C7500233D64 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		82B133001C7C602500181A74 /* SQLTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLTest.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8228991F1C7C5C2F0058B499 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		822899191C7C5C2F0058B499 = {
+			isa = PBXGroup;
+			children = (
+				824D9EC51C7C5C7500233D64 /* LICENSE */,
+				824D9EC61C7C5C7500233D64 /* Package.swift */,
+				824D9EBA1C7C5C6D00233D64 /* Sources */,
+				824D9EC81C7C5C8200233D64 /* Tests */,
+				822899231C7C5C2F0058B499 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		822899231C7C5C2F0058B499 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				822899221C7C5C2F0058B499 /* SwiftSQL */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		824D9EBA1C7C5C6D00233D64 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				824D9EBB1C7C5C6D00233D64 /* UnsupportedDriver.swift */,
+				824D9EBC1C7C5C6D00233D64 /* PostgreSQLDriver.swift */,
+				824D9EBD1C7C5C6D00233D64 /* SQL.swift */,
+				824D9EBE1C7C5C6D00233D64 /* SQLDriver.swift */,
+				824D9EBF1C7C5C6D00233D64 /* SQLModel.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		824D9EC81C7C5C8200233D64 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				82B133001C7C602500181A74 /* SQLTest.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		822899211C7C5C2F0058B499 /* SwiftSQL */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 822899291C7C5C2F0058B499 /* Build configuration list for PBXNativeTarget "SwiftSQL" */;
+			buildPhases = (
+				8228991E1C7C5C2F0058B499 /* Sources */,
+				8228991F1C7C5C2F0058B499 /* Frameworks */,
+				822899201C7C5C2F0058B499 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftSQL;
+			productName = SwiftSQL;
+			productReference = 822899221C7C5C2F0058B499 /* SwiftSQL */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8228991A1C7C5C2F0058B499 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Tuan Phung";
+				TargetAttributes = {
+					822899211C7C5C2F0058B499 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = 8228991D1C7C5C2F0058B499 /* Build configuration list for PBXProject "SwiftSQL" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 822899191C7C5C2F0058B499;
+			productRefGroup = 822899231C7C5C2F0058B499 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				822899211C7C5C2F0058B499 /* SwiftSQL */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8228991E1C7C5C2F0058B499 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				824D9EC71C7C5C7500233D64 /* Package.swift in Sources */,
+				824D9EC21C7C5C6D00233D64 /* SQL.swift in Sources */,
+				824D9EC01C7C5C6D00233D64 /* UnsupportedDriver.swift in Sources */,
+				82B133011C7C602500181A74 /* SQLTest.swift in Sources */,
+				824D9EC31C7C5C6D00233D64 /* SQLDriver.swift in Sources */,
+				824D9EC11C7C5C6D00233D64 /* PostgreSQLDriver.swift in Sources */,
+				824D9EC41C7C5C6D00233D64 /* SQLModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		822899271C7C5C2F0058B499 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		822899281C7C5C2F0058B499 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		8228992A1C7C5C2F0058B499 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8228992B1C7C5C2F0058B499 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8228991D1C7C5C2F0058B499 /* Build configuration list for PBXProject "SwiftSQL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				822899271C7C5C2F0058B499 /* Debug */,
+				822899281C7C5C2F0058B499 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		822899291C7C5C2F0058B499 /* Build configuration list for PBXNativeTarget "SwiftSQL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8228992A1C7C5C2F0058B499 /* Debug */,
+				8228992B1C7C5C2F0058B499 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8228991A1C7C5C2F0058B499 /* Project object */;
+}
