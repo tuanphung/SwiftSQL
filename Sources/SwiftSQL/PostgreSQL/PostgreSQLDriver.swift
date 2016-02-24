@@ -1,5 +1,4 @@
 import libpq
-import Core
 
 public class PostgreSQLDriver: SQLDriver {
 	public init() {}
