@@ -1,3 +1,5 @@
+import Core
+import PostgreSQL
 
 public enum SQLType {
 	case Postgre

@@ -10,6 +10,16 @@ func libpqPackage() -> (url: String, major: Int) {
 
 let package = Package(
   name: "SwiftSQL",
+  targets: [
+  		Target(
+            name: "SQL",
+            dependencies: [.Target(name: "PostgreSQL")]),
+        Target(
+            name: "PostgreSQL",
+            dependencies: [.Target(name: "Core")]),
+        Target(
+            name: "Core")
+    ],
   dependencies: [
     .Package(url: libpqPackage().url, majorVersion: libpqPackage().major)
   ]

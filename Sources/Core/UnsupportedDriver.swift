@@ -1,4 +1,6 @@
 public class UnsupportedDriver: SQLDriver {
+	public init() {}
+	
 	public class func initInstance() -> SQLDriver {
 		return UnsupportedDriver()
 	}
