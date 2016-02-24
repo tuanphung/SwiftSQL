@@ -17,5 +17,6 @@ let package = Package(
     ],
   dependencies: [
     .Package(url: libpqPackage().url, majorVersion: libpqPackage().major)
-  ]
+  ],
+  exclude: ["Main"]
 )
